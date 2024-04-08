@@ -1,0 +1,14 @@
+{% extends 'Base.html'%}
+
+
+{%block body%}
+<h1 style="display: flex;justify-content:center ;">our department</h1>
+<hr>
+{%for d in dept%}
+<div style="background-color: green;color: white;" >
+    <h1 style="display: flex;justify-content:center ;">{{d.dep_name}}</h1>
+    <p style="display: flex;justify-content:center ;">{{d.dep_description}}</p>
+</div>
+{% endfor %}
+
+{%endblock%}
