@@ -16,7 +16,7 @@ class Doctors(models.Model):
     doc_image = models.ImageField(upload_to='doctors')
 
 class Products(models.Model):
-    prdct_name = models.CharField(max_length=200)
-    prdct_price = models.CharField(max_length=200)
+    prdct_name = models.CharField(max_length=255)
+    prdct_price = models.CharField(max_length=255)
     prdct_description = models.TextField()
    

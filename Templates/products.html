@@ -1,7 +1,12 @@
 {% extends 'Base.html '%}
 
 {% block body %}
-{% for i in dict_prdct %}
-<h1>{{i.prdct_name}}</h1>
+{% for i in prdcts %}
+<div style="display: flex;justify-content: center;">
+<h1 style="margin-right: 70px;">{{i.prdct_name}}  =</h1>
+<h1>Price is:{{i.prdct_price}}</h1>
+</div>
+
+<p style="display: flex;justify-content: center;">{{i.prdct_description}}</p>
 {%endfor%}
 {% endblock %}
