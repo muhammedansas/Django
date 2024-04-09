@@ -20,3 +20,7 @@ class Products(models.Model):
     prdct_price = models.CharField(max_length=255)
     prdct_description = models.TextField()
    
+class Member(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)   
