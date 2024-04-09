@@ -6,11 +6,7 @@ from .models import Departments, Doctors, Products, Member
 # Create your views here.
 
 def index(request):
-    perosns = {
-        "name":"ansas",
-        "age":10,
-        "place" : "olavanna"
-    }
+    
     return render(request, 'index.html',perosns)
 
 def home(request):
