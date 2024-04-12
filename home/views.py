@@ -75,10 +75,10 @@ def doctors(request):
     return render(request, 'doctors.html',dict_docs)
 
 def products(request):
-    dict_prdct = {
-        "prdcts" : Products.objects.all()
-    }
-    return render(request, 'products.html',dict_prdct)
+    print(request.COOKIES)
+    visits=int(request.COOKIES.get('visits',0))
+    visits = visits+1
+    return render(request, 'products.html',{'prdcts':Products.objects.all()})
 
 # class based view (cbv) examples:
 
