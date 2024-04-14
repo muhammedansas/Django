@@ -76,10 +76,10 @@ def doctors(request):
 
 def products(request):
     print(request.COOKIES)
-    visits=int(request.COOKIES.get('hi',0))
+    visits=int(request.COOKIES.get('count',0))     # request.COOKIES['count'] = '0'    this is happening here
     visits = visits+1
     responce = render(request, 'products.html',{'prdcts':Products.objects.all(),'visits':visits})
-    responce.set_cookie('hi',visits)
+    responce.set_cookie('count',visits)
     return responce
 
 # class based view (cbv) examples:
