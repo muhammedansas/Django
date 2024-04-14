@@ -18,7 +18,6 @@ class Doctors(models.Model):
 class Products(models.Model):
     prdct_name = models.CharField(max_length=255)
     prdct_price = models.CharField(max_length=255)
-    prdct_description = models.TextField()
     
    
 class Member(models.Model):
