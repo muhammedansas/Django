@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.views import View
 from .models import Departments, Doctors, Products, Member
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -13,17 +14,24 @@ def index(request):
     }
     return render(request, 'index.html',perosns)
 
+@login_required(login_url='login')
 def home(request):
     return HttpResponse("home page")
 
+@login_required(login_url='login')
 def contact(request):
     return render(request, 'Contact.html')
 
+@login_required(login_url='login')
 def about(request):
     return render(request, "About.html")
 
+@login_required(login_url='login')
 def session(request):
     return render(request, "session.html")
+
+                                # CRUD
+# //////////////////////////////////////////////////////////////////////////
 
 def crud(request):
     dict_member = {
@@ -62,18 +70,24 @@ def uprec(request,id):
     mem.save()
     return redirect('/crud')
 
+# //////////////////////////////////////////////////////////////////////
+@login_required(login_url='login')
 def department(request):
     dict_dept = {
         "dept" : Departments.objects.all()
     }
     return render(request, 'department.html', dict_dept)
 
+
+@login_required(login_url='login')
 def doctors(request):
     dict_docs = {
         "doctors" : Doctors.objects.all()
     }
     return render(request, 'doctors.html',dict_docs)
 
+
+@login_required(login_url='login')
 def products(request):
     print(request.COOKIES)
     visits=int(request.COOKIES.get('count',0))     # request.COOKIES['count'] = '0'    this is happening here
