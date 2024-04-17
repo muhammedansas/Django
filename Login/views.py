@@ -1,6 +1,8 @@
 from django.shortcuts import render , redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from . forms import Dummy
+from . models import Dummyitems
 
 # Create your views here.
 
@@ -34,3 +36,17 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
+
+# /////////////////////////////  Forms //////////////////////////////////////////////
+
+def mform(request):
+    print(request)
+    form = Dummy()
+    if request.POST:
+        form = Dummy(request.POST)
+        if form.is_valid():
+            form.save()
+    dem = Dummyitems.objects.all()        
+    return render(request, 'Forms/model_form.html',{"frm":form,"dem":dem})
+
+# ////////////////////////////////////////////////////////////////////////////////////////

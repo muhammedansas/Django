@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/cinima.css'%}">
+</head>
+<body>
+    
+    <h1>CINIMA LISTS</h1>
+    {% for i in movie_obj %}
+    <div class="card">
+        <img src={{i.movie_image.url}} alt="Image" style="width:100%">
+        <div class="container">
+          <h1><b>{{i.movie_name}}</b></h1>
+          <h4><b>{{i.movie_type}}</b></h5>
+          <p>{{i.description}}</p>
+        </div>
+        
+    {% endfor %}
+    </div>
+    <br>
+    <a href="{% url 'm_add'%}"><button id="new3">Add More</button></a>
+</body>
+</html>

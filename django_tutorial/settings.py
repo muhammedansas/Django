@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'Login',  
+    'Login',
+    'cinima',  
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'django_tutorial.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Templates','crud_templates'],
+        'DIRS': ['Templates','crud_templates','cinima_templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
