@@ -45,6 +45,7 @@ def mform(request):
     if request.POST:
         form = Dummy(request.POST)
         if form.is_valid():
+            
             form.save()
     dem = Dummyitems.objects.all()        
     return render(request, 'Forms/model_form.html',{"frm":form,"dem":dem})
