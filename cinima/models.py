@@ -7,4 +7,3 @@ class Movies(models.Model):
     movie_type = models.CharField(max_length=250)
     description = models.TextField()
     movie_image = models.ImageField(upload_to='cinima')
-

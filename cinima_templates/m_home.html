@@ -12,13 +12,13 @@
     <h1>CINIMA LISTS</h1>
     {% for i in movie_obj %}
     <div class="card">
-        <img src={{i.movie_image.url}} alt="Image" style="width:100%">
+        <img src="{{ i.movie_image.url }}" alt="Image" style="width:100%">
         <div class="container">
           <h1><b>{{i.movie_name}}</b></h1>
          <h4><b>{{i.movie_type}}</b></h5>
-          
         </div>
-        
+        <a href="m_delete/{{i.id}}"><button>delete</button></a>
+        <a href="m_updating/{{i.id}}"><button>update</button></a>
     {% endfor %}
     </div>
     <br>

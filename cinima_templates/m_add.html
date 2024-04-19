@@ -10,18 +10,7 @@
     <div>
         <form action="{% url 'm_adding' %}" method="post">
             {% csrf_token %}
-            <label>Movie name : </label> <input type="text" name="movie_name" />
-            <br>
-            <br>
-            <label>Movie Type : </label> <input type="text" name="movie_type" />
-            <br>
-            <br>
-            <label>Description : </label> <input type="text" name="description" />
-            <br>
-            <br>
-            <label>image : </label> <input type="text" name="image" />
-            <br>
-            <br>
+            {{form.as_p}}
             <button type="submit">Add</button>
         </form>
     </div>
