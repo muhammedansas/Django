@@ -56,7 +56,7 @@ def update(request,id):
     movie.description = description
     movie.movie_image = movie_image
     movie.save()
-    
+    return redirect('/m_home')
 
 
    
