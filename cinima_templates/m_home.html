@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/cinima.css'%}">
 </head>
 <body>
-    
+    <a href="{% url 'home' %}"><button>Back</button></a>
     <h1>CINIMA LISTS</h1>
     {% for i in movie_obj %}
     <div class="card">
@@ -18,10 +18,12 @@
          <h4><b>{{i.movie_type}}</b></h5>
         </div>
         <a href="m_delete/{{i.id}}"><button>delete</button></a>
-        <a href="m_updating/{{i.id}}"><button>update</button></a>
+        <a href="m_update/{{i.id}}"><button>update</button></a>
     {% endfor %}
     </div>
     <br>
     <a href="{% url 'm_add'%}"><button id="new3">Add More</button></a>
+    <br>
+    <br>
 </body>
 </html>
