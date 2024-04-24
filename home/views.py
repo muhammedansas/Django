@@ -82,7 +82,7 @@ def department(request):
 @login_required(login_url='login')
 def doctors(request):
     dict_docs = {
-        
+        "doctors" : Doctors.objects.all()
     }
     return render(request, 'doctors.html',dict_docs)
 
