@@ -98,9 +98,3 @@ def products(request):
 
 # class based view (cbv) examples:
 
-class Myview(View):
-    def get(self,request):
-        return HttpResponse('get request handled')
-    
-    def post(self,request):
-        return HttpResponse()
