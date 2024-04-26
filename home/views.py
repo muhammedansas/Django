@@ -96,11 +96,3 @@ def products(request):
     responce.set_cookie('count',visits)
     return responce
 
-# class based view (cbv) examples:
-
-class Myview(View):
-    def get(self,request):
-        return HttpResponse('get request handled')
-    
-    def post(self,request):
-        return HttpResponse()
