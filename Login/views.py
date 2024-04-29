@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from . forms import Dummy
 from . models import Dummyitems
 
-# Create your views here.
+
 
 def signup(request):
     user=None
